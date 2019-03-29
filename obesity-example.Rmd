@@ -17,11 +17,13 @@ obesity = read_csv("obesity.csv") %>%
   mutate(prevalence = obese / bmi) %>%
   mutate(zip = clean.zipcodes(zip))
 ```
-
+## TITLE
 ```{r plot}
 ggplot(obesity, aes(x=age,y=prevalence,fill=sex)) +
   geom_violin() +
-  scale_fill_manual(values = c("hotpink","powderblue")) +
-  theme_bw()
+  scale_fill_manual(values = c("mistyrose","palegoldenrod")) +
+  theme_bw()+
+  ggtitle("Violin plot")
+
 ```
 
